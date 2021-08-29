@@ -1,0 +1,6 @@
+selenium==3.141.0
+chromedriver-binary==2.43.0
+webdriver_manager==3.4.2
+sqlalchemy~=1.4
+pymysql~=1.0
+pytz
