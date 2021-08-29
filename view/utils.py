@@ -1,24 +1,23 @@
 import time
 
+
 class Utils:
     def __init__(self, driver):
         self.driver = driver
 
-    def take_picture(self, name_photo:str):
+    def take_picture(self, name_photo: str):
         self.driver.save_screenshot(f'./image_screenshot/{name_photo}.png')
-        print(f'Printscreen tirado, foto salva em "/image_screenshot/{name_photo}.png"')
-
+        print(f'Printscreen taken, photo will be saved as "/image_screenshot/{name_photo}.png"')
 
     def get_text_page(self, link_page: str):
         message = self.driver.find_element_by_tag_name("body").text
-        print(f"{message} referente ao site {link_page}")
-
+        print(f"{message} from {link_page}")
 
     def scrolling_page(self):
         SCROLL_PAUSE_TIME = 0.5
         # Get scroll height
         last_height = self.driver.execute_script("return document.body.scrollHeight")
-        print('Rolando a página...')
+        print('Scrolling page...')
         while True:
             # Scroll down to bottom
             self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")

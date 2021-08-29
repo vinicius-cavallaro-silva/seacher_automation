@@ -1,9 +1,7 @@
 from selenium.webdriver.common.keys import Keys
-from selenium import webdriver
 
 
 class GoogleHandler:
-
 
     def __init__(self, driver):
         self.driver = driver
@@ -32,13 +30,12 @@ class GoogleHandler:
                 break
         return list_links
 
-
     def open_google(self):
-        self.driver.get('http://www.google.com')
+        self.driver.get('http://www.google.com.br')
         try:
             cookies = self.driver.find_element_by_xpath('//*[contains(text(), "Concordo")]')
             if cookies:
                 cookies.click()
         except:
             pass
-            print('Cookies já aceitos...')
+            print('Cookies accepted...')

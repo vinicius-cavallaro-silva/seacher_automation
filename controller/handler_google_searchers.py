@@ -15,36 +15,36 @@ class HandlerSearchers:
 
     def flow_search(self):
 
-        print('Abrindo o Browser...')
+        print('Opening Browser...')
         self.searcher_google.open_google()
         self.utils.maximize_window()
         for item in self.list_search:
-            print('Iniciando as pesquisas...')
+            print('Starting researches...')
             self.searcher_google.new_search(text=item)
             self.utils.scrolling_page()
 
-            print('Coletando retorno da busca...')
+            print('Colecting researches leads...')
             links = self.searcher_google.get_links_list_by_searched()
 
-            print('Validando links para aprofundamento das buscas...')
+            print('Validating links to deepen searches...')
             list_links = self.searcher_google.validate_list_links(link_list=links)
 
-            print('Aplicando para as buscas encontradas...')
+            print('Opening research links...')
             for link in list_links:
                 self.utils.open_new_tab(link_page=link)
                 self.utils.open_link(link=link)
-                print('Tirando um printscreen... ;p')
+
+                print('Taking a printscreen...')
                 self.utils.take_picture(name_photo=item)
                 self.utils.scrolling_page()
-                # print('Coletando os dados da tela...')
-                # self.utils.get_text_page(link_page=link)
-                print('Fechando a aba...')
+
+                print('Closing tab...')
                 self.utils.close_tab()
 
-                print('Criando o Json para armazenamento buscar realizadas')
+                print('Saving results in Database ')
                 SearcherModel.create_or_update(link_searched=link, photo_name=item)
 
-        print('Fechando o browser...')
+        print('Closing browser...')
         self.utils.close_window()
 
-        print('Fim.')
+        print('End.')

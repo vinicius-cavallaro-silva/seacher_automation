@@ -1,7 +1,7 @@
 # Searcher Automations 
 
 ### Introduction 
-This is a project developed to automate searchers about "Automação de processos", "Python" e "Agilizando tarefas repetitivas".
+This is a project developed to automate searchers about "Business process automation", "Automating repetitive tasks" and "Data collection".
 
 #### Goals 
 
@@ -14,7 +14,7 @@ The point here is to prove that is possible to search everything you need automa
 - [x] Load all of them;
 - [x] Get information in their websites.
 - [x] Take a print screen.
-- [x] Save information.
+- [x] Save information in a database.
 
 
 ### Requirements
@@ -38,8 +38,8 @@ After installed those programs, you'll need run pip install:
 
 - **What's the print screen's is stored?** 
   
-  It has been stored in the folder: 'searched / image_screenshot'
+  It has been stored in a SQLite database.
 
 
 ### Any Suggestions
-[creator's email:](daniele.a.longato@gmail.com) daniele.a.longato@gmail.com
+[creator's email:](vinicius.cavallaro.silva@gmail.com) vinicius.cavallaro.silva@gmail.com
